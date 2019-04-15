@@ -1,2 +1,2 @@
 #!/bin/bash -e
-jq . < $GITHUB_EVENT_PATH
+jq -r . < $GITHUB_EVENT_PATH > $GITHUB_WORKSPACE/event.json
