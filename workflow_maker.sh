@@ -1,11 +1,17 @@
-for i in $(cat supported_events.txt);
+#!/bin/bash
+while read event
 do
-    echo "workflow \"${i}\" {"
-    echo "  on = \"${i}\""
+    if [[ $event == \#* ]];
+    then
+        continue
+    fi
+
+    echo "workflow \"${event}\" {"
+    echo "  on = \"${event}\""
     echo '  resolves = ["managedkaos/save-event-json@master"]'
     echo '}'
     echo
-done
+done < ./supported_events.txt
 
 echo 'action "managedkaos/save-event-json@master" {'
 echo '  uses = "managedkaos/save-event-json@master"'

@@ -23,6 +23,6 @@ pull_request_review
 push
 repository_dispatch
 release
-scheduled
+#scheduled
 status
 watch
