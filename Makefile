@@ -6,3 +6,5 @@ case:
 
 check:
 	shellcheck *.sh
+
+.PHONY: workflow case check
